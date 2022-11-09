@@ -23,7 +23,6 @@ body{
 .image{
     width: 75%;
     height: 100%;
-    background-image: url("../img/01.webp");
     background-size: cover;
     background-position: center;
     border-top-left-radius: 10px;
