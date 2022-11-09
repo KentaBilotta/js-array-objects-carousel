@@ -36,6 +36,7 @@ const subtitle = document.getElementById("subtitle");
 
 let nImages = 5;
 let counter = 1;
+let arrCounter = 0;
 
 btnDown.addEventListener("click", function() {
     mainImage.classList.remove(`img-${counter}`);
@@ -43,10 +44,13 @@ btnDown.addEventListener("click", function() {
     list[counter - 1].classList.remove("white-border");
 
     counter++;
+    arrCounter++;
 
     mainImage.classList.add(`img-${counter}`);
     list[counter - 1].innerHTML = "";
     list[counter - 1].classList.add("white-border");
+    title.innerHTML = images[arrCounter].title;
+    subtitle.innerHTML = images[arrCounter].text;
 
 
     if (counter == nImages + 1) {
@@ -62,9 +66,13 @@ btnUp.addEventListener("click", function() {
     list[counter - 1].classList.remove("white-border");
 
     counter--;
+    arrCounter--;
+    
     mainImage.classList.add(`img-${counter}`);
     list[counter - 1].innerHTML = "";
     list[counter - 1].classList.add("white-border");
+    title.innerHTML = images[arrCounter].title;
+    subtitle.innerHTML = images[arrCounter].text;
     
     if (counter == 0) {
         mainImage.classList.remove(`img-${counter}`);
